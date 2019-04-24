@@ -1,0 +1,14 @@
+type Query {
+  jobApplicationsById(_id: ID): JobApplications
+  jobApplications: [JobApplications]
+}
+
+type JobApplications {
+	_id: ID!
+	submittedBy: ID!
+	jobOpeningId: ID!
+	coverNote: String!
+	resumeURL: String!
+	quotedPrice: String!
+	
+}

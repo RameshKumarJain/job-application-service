@@ -1,0 +1,37 @@
+type Query {
+  jobApplicationsById(_id: ID): JobApplications
+  jobApplications: [JobApplications]
+}
+
+type JobApplications {
+	_id: ID!
+	submittedBy: User!
+	jobOpenings: JobOpenings!
+	coverNote: String!
+	resumeURL: String!
+	quotedPrice: String!
+	
+}
+
+type JobOpenings {
+	_id: ID!
+	openingDescription: String!
+	startDate: String!
+	endDate: String!
+	expectedSalary: String!
+	createdBy: User!
+}
+
+type User {
+	_id: ID!
+	name: String!
+	userType: UserType!
+	age: Int!
+	email: String!
+	mobNo: String!
+}
+
+enum UserType {
+	CLIENT
+	FREELANCER
+}
